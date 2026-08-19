@@ -1,0 +1,38 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+env/
+venv/
+.venv/
+ENV/
+
+# ── Data files (raw & processed) — provide separately ────────────────────────
+data/raw/*.csv
+data/raw/*.xlsx
+data/raw/*.json
+data/processed/*.parquet
+data/processed/*.csv
+
+# ── Jupyter artifacts ─────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── OS artifacts ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Scratch / temp ────────────────────────────────────────────────────────────
+pdf_content.txt
+*.log
+scratch/
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
