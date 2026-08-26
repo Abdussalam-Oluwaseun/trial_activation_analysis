@@ -1,0 +1,35 @@
+version: 2
+
+sources:
+  - name: trial
+    description: "Raw trial event data loaded from DA task.csv"
+    database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+    schema: "{{ env_var('SNOWFLAKE_RAW_SCHEMA', 'raw') }}"
+    tables:
+      - name: events
+        description: "One row per organisation activity event during the trial window"
+        columns:
+          - name: organization_id
+            description: "Unique organisation identifier"
+            tests:
+              - not_null
+          - name: activity_name
+            description: "Product activity performed"
+            tests:
+              - not_null
+          - name: timestamp
+            description: "When the activity occurred (UTC)"
+            tests:
+              - not_null
+          - name: converted
+            description: "Whether the org converted to a paid plan"
+          - name: converted_at
+            description: "Timestamp of conversion (NULL if not converted)"
+          - name: trial_start
+            description: "Trial start date (UTC)"
+            tests:
+              - not_null
+          - name: trial_end
+            description: "Trial end date = trial_start + 30 days (UTC)"
+            tests:
+              - not_null

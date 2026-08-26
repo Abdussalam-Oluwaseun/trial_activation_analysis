@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_trial_activation
+    description: >
+      Organisation-level trial activation flag.
+      Grain: one row per organisation.
+    columns:
+      - name: organization_id
+        description: "Unique organisation identifier"
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('stg_trial_events')
+                field: organization_id
+      - name: converted
+        description: "Whether the org converted to a paid plan"
+        tests:
+          - not_null
+      - name: total_events
+        description: "Total number of in-window events for the org"
+        tests:
+          - not_null
+      - name: goals_completed
+        description: "Number of trial goals completed (0-5)"
+        tests:
+          - not_null
+      - name: is_activated
+        description: "True if the org completed all 5 trial goals"
+        tests:
+          - not_null

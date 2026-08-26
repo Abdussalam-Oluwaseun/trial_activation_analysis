@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fct_trial_goals
+    description: >
+      Trial goal completion, one row per organisation per goal.
+      Grain: (organization_id, goal_id).
+    columns:
+      - name: organization_id
+        description: "Unique organisation identifier"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_trial_events')
+                field: organization_id
+      - name: goal_id
+        description: "Identifier of the trial goal"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - g1_scheduling_setup
+                  - g2_schedule_engagement
+                  - g3_team_communications
+                  - g4_punch_clock
+                  - g5_sustained_engagement
+      - name: goal_name
+        description: "Human-readable goal name"
+        tests:
+          - not_null
+      - name: is_completed
+        description: "Whether the org completed this goal"
+        tests:
+          - not_null

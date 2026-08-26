@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: stg_trial_events
+    description: >
+      Cleaned, typed trial event stream. One row per
+      (organization_id, activity_name, event_timestamp).
+    columns:
+      - name: organization_id
+        description: "Unique organisation identifier"
+        tests:
+          - not_null
+      - name: activity_name
+        description: "Product activity performed"
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: "When the activity occurred (UTC)"
+        tests:
+          - not_null
+      - name: converted
+        description: "Whether the org converted to a paid plan"
+        tests:
+          - not_null
+      - name: trial_start
+        description: "Trial start date (UTC)"
+        tests:
+          - not_null
+      - name: trial_end
+        description: "Trial end date = trial_start + 30 days (UTC)"
+        tests:
+          - not_null
+      - name: trial_day
+        description: "Integer day within the 30-day trial: 0 = first day, 29 = last"
+        tests:
+          - not_null
+      - name: days_to_convert
+        description: "Decimal days from trial start to conversion (NULL for non-converters)"
+      - name: module
+        description: "Product module derived from activity_name"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Scheduling', 'Absence', 'PunchClock', 'Payroll', 'Communications', 'Other']

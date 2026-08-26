@@ -36,3 +36,10 @@ scratch/
 .vscode/
 .idea/
 *.swp
+
+# ── dbt ───────────────────────────────────────────────────────────────────────
+target/
+dbt_packages/
+logs/
+.user.yml
+profiles.yml

@@ -1,0 +1,30 @@
+name: 'trial_activation'
+version: '1.0.0'
+config-version: 2
+
+# The profile dbt will use to connect to Snowflake
+# This must match the profile name in ~/.dbt/profiles.yml
+profile: 'trial_activation'
+
+# Paths — all relative to this dbt_project.yml
+model-paths:    ["models"]
+analysis-paths: ["analyses"]
+test-paths:     ["tests"]
+seed-paths:     ["seeds"]
+macro-paths:    ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path:   "target"
+clean-targets: ["target", "dbt_packages"]
+
+# Model-level config defaults
+models:
+  trial_activation:
+
+    staging:
+      +materialized: view
+      +schema: staging
+
+    marts:
+      +materialized: table
+      +schema: marts
