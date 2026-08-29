@@ -1,28 +1,35 @@
-# Core data
+# ─── Core data ────────────────────────────────────────────────────────────────
 pandas==2.2.3
 numpy==2.2.5
 
-# Visualisation
+# ─── Visualisation ────────────────────────────────────────────────────────────
 matplotlib==3.10.3
 seaborn==0.13.2
 plotly==6.1.2
 
-# Statistics & ML
+# ─── Statistics & ML ──────────────────────────────────────────────────────────
 scipy==1.15.3
 scikit-learn==1.6.1
 xgboost==3.0.2
 shap==0.47.2
 
-# Survival analysis
+# ─── Survival analysis ────────────────────────────────────────────────────────
 lifelines==0.30.0
 
-# Notebook execution
+# ─── Notebook execution ───────────────────────────────────────────────────────
 jupyter==1.1.1
 nbconvert==7.16.6
 ipykernel==6.29.5
 
-# Data storage
-pyarrow==20.0.0
+# ─── Data storage ─────────────────────────────────────────────────────────────
+pyarrow==23.0.1
 
-# Utilities
+# ─── Utilities ────────────────────────────────────────────────────────────────
 openpyxl==3.1.5
+
+# ─── Dashboard API server ─────────────────────────────────────────────────────
+fastapi==0.141.1
+uvicorn==0.52.4
+snowflake-connector-python==4.7.2
+python-dotenv==1.2.3
+pydantic==2.13.4

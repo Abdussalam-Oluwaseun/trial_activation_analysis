@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trial Activation Dashboard — COGENT bi</title>
+  <meta name="description" content="COGENT bi internal analytics dashboard for tracking organisation trial activation, conversion, and journey insights.">
+
+  <!-- IBM Plex Sans loaded via styles.css @import -->
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ── Sidebar ───────────────────────────────────────────────────────────── -->
+  <nav id="sidebar">
+
+    <div class="sidebar-brand">
+      <span class="brand-name">COGENT bi</span>
+      <span class="brand-sub">Trial Activation Dashboard</span>
+    </div>
+
+    <div class="sidebar-nav">
+
+      <div class="nav-section-label">Workspace</div>
+
+      <button class="nav-item" data-view="overview">
+        <!-- Grid icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        Overview
+      </button>
+
+      <button class="nav-item" data-view="funnel">
+        <!-- Funnel icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+        </svg>
+        Goal Funnel
+      </button>
+
+      <button class="nav-item" data-view="organisations">
+        <!-- Building icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="1"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+        Organisations
+      </button>
+
+      <button class="nav-item" data-view="recommendations">
+        <!-- Lightbulb icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 14c.2-1 .7-1.7 1.5-2.5C17.9 10.1 19 8.6 19 7A7 7 0 1 0 5 7c0 1.6 1.1 3.1 2.5 4.5.8.8 1.3 1.5 1.5 2.5"/>
+          <path d="M9 18h6"/><path d="M10 22h4"/>
+        </svg>
+        Recommendations
+      </button>
+
+      <hr class="sidebar-divider">
+
+      <div class="nav-section-label">Data</div>
+
+      <button class="nav-item" style="opacity:.5;cursor:default" title="Coming soon">
+        <!-- Import icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Import data
+      </button>
+
+      <button class="nav-item" style="opacity:.5;cursor:default" title="Coming soon">
+        <!-- Report icon -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        Reports
+      </button>
+
+    </div><!-- /sidebar-nav -->
+
+    <div class="sidebar-footer">
+      <div class="avatar">AJ</div>
+      <span class="avatar-label">Admin</span>
+    </div>
+
+  </nav><!-- /sidebar -->
+
+  <!-- ── Main area ─────────────────────────────────────────────────────────── -->
+  <div id="main">
+
+    <div id="page-header">
+      <!-- Populated by JS setHeader() -->
+    </div>
+
+    <hr class="header-divider" style="display:none">
+
+    <div id="page-content">
+      <!-- Populated by JS renderView() -->
+    </div>
+
+  </div><!-- /main -->
+
+</div><!-- /app -->
+
+<script src="/static/app.js"></script>
+</body>
+</html>
