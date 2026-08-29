@@ -3,13 +3,13 @@ trial_activation:
   outputs:
     dev:
       type: snowflake
-      account: "LLMQLKG-OS30228"
-      user: "DBT_USER"
-      password: "Q9GZRz3QLVGn8wu"
-      role: "TRANSFORMER"
+      account: "LLMQLKG-OS30228"           # ← already confirmed correct
+      user: "bamzz"        # ← your Snowflake login email/username
+      password: "Q9GZRz3QLVGn8wu"    # ← your Snowflake password
+      role: "ACCOUNTADMIN"                      # ← or ACCOUNTADMIN — your personal role
       warehouse: "TRIAL_WH"
       database: "SPLENDOR_ANALYTICS"
-      schema: dbt_dev                         # personal dev schema
+      schema: dbt_dev
       threads: 4
       client_session_keep_alive: false
 
